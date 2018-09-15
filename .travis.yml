@@ -1,0 +1,28 @@
+language: python
+sudo: false
+dist: xenial
+branches:
+  only:
+  - master
+  - "/^v.*$/"
+matrix:
+  fast_finish: true
+  include:
+  - python: '2.7'
+    env:
+    - TOX_ENV=py27
+  - python: '3.5'
+    env:
+    - TOX_ENV=py35
+  - python: '3.6'
+    env:
+    - TOX_ENV=py36
+install:
+- curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly
+- export PATH="$HOME/.cargo/bin:$PATH"
+- rustc -V
+- pip install tox
+script:
+- tox -e $TOX_ENV
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

@@ -1,0 +1,7 @@
+graft rust
+graft src
+graft tests
+
+include tox.ini .travis.yml appveyor.yml
+
+global-exclude *.py[cod] __pycache__ *.so *.dylib

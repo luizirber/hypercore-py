@@ -1,4 +1,4 @@
 [submodule "rust"]
 	path = rust
-	url = git@github.com:luizirber/hypercore
+	url = https://github.com/luizirber/hypercore.git
 	branch = feature/ffi

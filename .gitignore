@@ -1,0 +1,8 @@
+.eggs
+.pytest_cache
+.tox
+build
+src/hypercore.egg-info
+src/hypercore/_native*
+src/hypercore/version.py
+**/__pycache__

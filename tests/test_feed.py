@@ -1,5 +1,6 @@
-import hypercore
+from hypercore.feed import Feed
+
 
 def test_feed():
-    feed = hypercore.lib.new_feed()
+    feed = Feed()
     assert feed is not None
